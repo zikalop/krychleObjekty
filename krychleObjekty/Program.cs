@@ -8,7 +8,6 @@ namespace objektyKrychle
             public int StranaA { get; set; }
             public int StranaB { get; set; }
             public int StranaC { get; set; }
-
             public Kvadr(int a, int b, int c)
             {
                 StranaA = a;
@@ -50,21 +49,21 @@ namespace objektyKrychle
             int hodnota1 = int.Parse(Console.ReadLine());
             int hodnota2 = int.Parse(Console.ReadLine());
             int hodnota3 = int.Parse(Console.ReadLine());
-            var kvadr = new Kvadr(hodnota1, hodnota2, hodnota3);
+            var kvadrMetoda = new Kvadr(hodnota1, hodnota2, hodnota3);
 
             switch (tabulkaVypoctu)
             {
                 case "Povrch":
-                    Console.WriteLine($"Povrch se rovná: {kvadr.povrch()}");
+                    Console.WriteLine($"Povrch se rovná: {kvadrMetoda.povrch()}");
                     break;
                 case "Objem":
-                    Console.WriteLine($"Objem se rovná: {kvadr.objem()}");
+                    Console.WriteLine($"Objem se rovná: {kvadrMetoda.objem()}");
                     break;
                 case "Tělesná úhlopříčka":
-                    Console.WriteLine($"Tělesová úhlopříčka se rovná: {kvadr.tUhlopricka()}");
+                    Console.WriteLine($"Tělesová úhlopříčka se rovná: {kvadrMetoda.tUhlopricka()}");
                     break;
                 case "Stěnová úhlopříčka":
-                    Console.WriteLine($"Stěnová úhlopříčka se rovná: {kvadr.sUhlopricka}");
+                    Console.WriteLine($"Stěnová úhlopříčka se rovná: {kvadrMetoda.sUhlopricka}");
                     break;
             }
         }
