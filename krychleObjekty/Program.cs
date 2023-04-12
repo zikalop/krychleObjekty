@@ -1,5 +1,5 @@
 ﻿using Spectre.Console;
-namespace objektyKrychle
+namespace objektyKvádr
 {
     class Vypocty
     {
