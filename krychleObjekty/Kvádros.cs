@@ -1,2 +1,1 @@
-﻿using objektyKrychle;
-objektyKrychle.Vypocty.hlavniVypocet();
+﻿objektyKvádr.Vypocty.hlavniVypocet();
