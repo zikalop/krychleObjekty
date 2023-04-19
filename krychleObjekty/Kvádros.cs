@@ -1,1 +1,0 @@
-﻿objektyKvádr.Vypocty.hlavniVypocet();

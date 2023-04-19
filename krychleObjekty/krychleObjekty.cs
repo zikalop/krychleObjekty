@@ -1,7 +1,7 @@
 ﻿using Spectre.Console;
-namespace objektyKvádr
+namespace krychleObjekty
 {
-    class Vypocty
+    public class Vypocty
     {
         public class Kvadr
         {
