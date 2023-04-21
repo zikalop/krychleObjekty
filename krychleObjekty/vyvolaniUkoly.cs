@@ -1,5 +1,5 @@
 ﻿using Spectre.Console;
-string[] array=new string[] { "krychle", "metody"};
+string[] array=new string[] { "krychle", "metody","koleso"};
  var tabulky = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("string s otázkou nebo nadpis")
@@ -14,5 +14,8 @@ switch(tabulky)
         break;
     case "metody":
         ukolMetody.neivm.Main();//druhý ukol s třídamy
+        break;
+    case "koleso":
+        koleso.everithing.Main();
         break;
 }
