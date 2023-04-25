@@ -39,6 +39,7 @@ namespace krychleObjekty
 
         public static void hlavniVypocet()
         {
+            ZNOVA:
             var tabulkaVypoctu = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                 .Title("vyber si výpočet")
@@ -65,6 +66,13 @@ namespace krychleObjekty
                 case "Stěnová úhlopříčka":
                     Console.WriteLine($"Stěnová úhlopříčka se rovná: {kvadrMetoda.sUhlopricka}");
                     break;
+            }
+            Console.WriteLine("Chceš opakovat?");
+            string answer = Console.ReadLine();
+            if (answer=="ano")
+            {
+                Console.Clear();
+                goto ZNOVA;
             }
         }
     }
