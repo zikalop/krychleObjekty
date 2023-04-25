@@ -10,12 +10,12 @@ string[] array=new string[] { "krychle", "metody","koleso"};
 switch(tabulky)
 {
     case "krychle":
-        krychleObjekty.Vypocty.hlavniVypocet();//první úkol s třídamy
+        krychleObjekty.Vypocty.hlavniVypocet();//první úkol s třídami
         break;
     case "metody":
-        ukolMetody.neivm.Main();//druhý ukol s třídamy
+        ukolMetody.neivm.Main();//druhý ukol s třídami
         break;
     case "koleso":
-        koleso.everithing.Main();
+        koleso.everithing.Main();//třetí úkol s třídami
         break;
 }

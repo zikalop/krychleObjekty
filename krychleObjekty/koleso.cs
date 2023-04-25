@@ -31,8 +31,6 @@
             int obsah = K3 - (K1 + K2 + Ob);
             var vypocet = new objekty(K1, K2, K3, Ob, obsah);
             Console.WriteLine($"obsah smajlíku je {obsah}cm²");
-
-
         }
     }
 
