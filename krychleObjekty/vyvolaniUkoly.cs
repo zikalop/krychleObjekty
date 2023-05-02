@@ -1,5 +1,5 @@
 ﻿using Spectre.Console;
-string[] array=new string[] { "krychle", "metody","koleso"};
+string[] array=new string[] { "krychle", "metody","koleso","kalkulačka"};
  var tabulky = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("string s otázkou nebo nadpis")
@@ -17,5 +17,8 @@ switch(tabulky)
         break;
     case "koleso":
         koleso.everithing.Main();//třetí úkol s třídami
+        break;
+    case "kalkulačka":
+        kalkulacka.ucenie.Main();//čtvrtý úkol s třídami
         break;
 }
