@@ -1,30 +1,42 @@
-﻿namespace tryCatch
+﻿using Spectre.Console;
+namespace tryCatch
 {
     public class vypocty
     {
-        public class obejkty
-        {
-            public static char znak;
-            /*public objekty(char a)
-            {
-                znak = a;
-            }*/
-        }
         public static void Main()
         {
-            char[] array = new char[10];
-            Console.WriteLine("zapiš 10 znaků(logicky jen jedno číslo/písmeno)");
-            try
+            var hodnoty = new char[10];
+            bool cyklus = true;
+            var list = new List<char>();
+            var obsah=new List<string>();
+            for (int i = 1; i <= 10; i++) obsah.Add($"{i}. index");
+            obsah.Add("konec");
+            obsah.Add("výpis");
+            while (cyklus)
             {
-                for(int i = 0; i < 10; i++)
+                Console.Clear();
+                var chari = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                        .Title("vyber si index do kterého budeš vypisovat char")
+                        .PageSize(10)
+                        .MoreChoicesText("")
+                        .AddChoices(obsah));
+                if (chari== "konec")
                 {
-                    array[i] =  Char.Parse(Console.ReadLine());
+                    Console.WriteLine("cyklus končí");
+                    cyklus = false;
+                    break;
                 }
-                Console.WriteLine($"zadané char byly: {array[0]},{array[1]},{array[2]},{array[3]},{array[4]},{array[5]},{array[6]},{array[7]},{array[8]},{array[9]}");
-            }
-            catch(Exception chytacChyb)
-            {
-                Console.WriteLine(chytacChyb.Message);
+                if(chari=="výpis")
+                {
+                    Console.WriteLine($"zadané hodnoty byly: {String.Join(",", hodnoty)}");
+                    cyklus=false;
+                    break;
+                }
+                char znaky = AnsiConsole.Ask<char>("zadej znak: ");
+                int poziceZ=obsah.IndexOf(chari);
+                obsah[poziceZ]=$"{poziceZ+1}.index={znaky}";
+                hodnoty[poziceZ] = znaky;
             }
         }
     }
