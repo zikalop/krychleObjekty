@@ -1,18 +1,29 @@
-﻿namespace projektKveten
+﻿using Spectre.Console; 
+namespace projektKveten
 {
     public class all
     {
-        public static class Product
+        public static void Main() { Inventory.Addproduct(); }
+        public class Product
         {
-            public static string name { get; set; }
-            public static double price { get; set; }
+            public string Name ;
+            public double Price;
+            public Product(string name, double price)
+            {
+
+            }
 
         }
         public static class Inventory
         {
-            public static string products;
-            public static string counts;
-            public static string honvo;
+            public static List<Product> prodakty = new List<Product>();
+            public static Array products=new int[] { };
+            public static int counts;
+
+            public static void Addproduct(string name,double price)
+            {
+                prodakty.Add(new Product(name, price));
+            }
         }
 
     }
