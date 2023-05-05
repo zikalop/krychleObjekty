@@ -1,9 +1,4 @@
-﻿using Spectre.Console;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using static projektKveten.all;
-
-namespace projektKveten
+﻿namespace projektKveten
 {
     public class all
     {
