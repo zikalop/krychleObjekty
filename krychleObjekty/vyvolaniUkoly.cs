@@ -25,6 +25,6 @@ switch(tabulky)
         tryCatch.vypocty.Main();
         break;
     case "projektKveten":
-        projektKveten.all.Main();
+        projektKveten.all.Inventory.Main();
         break;
 }
