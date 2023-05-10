@@ -5,15 +5,16 @@ namespace test
     {
     public static void Main()
         {
-            /*Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("Vítejte v bance :)");
-            Console.ForegroundColor = ConsoleColor.DarkGray;*/
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             var vyber3 = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                 .Title("chcet spořit nebo si vzít půjčku")
                 .PageSize(10)
                 .MoreChoicesText("")
                 .AddChoices("spořit", "půjčku"));
+            Console.Clear();
             if (vyber3 == "spořit")
             {
                 sporeni();
@@ -29,6 +30,9 @@ namespace test
 
             try
             {
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.WriteLine("Vítejte v bance :)");
+                Console.ForegroundColor = ConsoleColor.DarkGray;
                 var vyberDelku = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
                     .Title("jak dlouho chcete spořit?")
@@ -112,6 +116,7 @@ namespace test
         {
             try
             {
+                
                 Console.WriteLine("zadej hodnotu pujčky");
                 double P = double.Parse(Console.ReadLine());
 
