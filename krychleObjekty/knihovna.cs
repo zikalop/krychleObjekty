@@ -33,12 +33,13 @@ namespace knihovna
                         int[] arrayR = {objekty.inputR};
                         objekty.inputA = AnsiConsole.Ask<string>("Autor(zapisuj bez mezer):");
                         string[] arrayA = { objekty.inputA};
-                        Console.WriteLine("Chceš vypsat vše nebo přidávat dále?(z/p)");
+                        Console.WriteLine("Chceš zobrazit vše nebo přidávat dále?(z/p)");
                         objekty.input = Console.ReadLine();
                         switch(objekty.input)
                         {
                             case "z":
-                                AnsiConsole.MarkupLine("[purple]Vypsané informace jsou:[/]");
+                            Console.Clear();    
+                            AnsiConsole.MarkupLine("[purple]Vypsané informace jsou:[/]");
                                     foreach (string j in arrayJ)
                                     {
                                         Console.WriteLine(j);
