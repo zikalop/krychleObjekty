@@ -1,14 +1,17 @@
 ﻿using Spectre.Console;
-string[] array=new string[] { "krychleObjekty", "metody","koleso","kalkulačka","tryCatch","projektKveten","test" };
+string[] array=new string[] { "krychleObjekty", "metody","koleso","kalkulačka","tryCatch","projektKveten","test","knihovna" };
  var tabulkaSProjekty = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
-        .Title("string s otázkou nebo nadpis")
+        .Title("vyber praci kterou chceš spustit")
         .PageSize(14)
         .MoreChoicesText("")
         .AddChoices(array));
 
 switch(tabulkaSProjekty)
 {
+    case "knihovna":
+        knihovna.all.Main();
+        break;
     case "test":
         test.all.Main();
         break;
