@@ -7,54 +7,103 @@ namespace knihovna
         {
             public static string inputA;
             public static int inputR;
-            public static string inputJ;
-            public static string input;
+            public static string inputJK;
+            public static char input;
+            //public static char input2;
             public static List<kniha> Knihy=new List<kniha>();
+            public static bool cyklus = true;
+            public static char rozhodnuti;
+            public static string hledani;
         }
         public class kniha
         {
+            public kniha(string autor, int rok, string jmeno)
+            {
+                this.autor = autor;
+                this.rok = rok;
+                this.jmeno = jmeno;
+            }
+
             public string autor;
             public int rok;
             public string jmeno;
+
         }
-        public class vice
+        public class metody
         {
-            public static bool cyklus = true;
+            public static void Hledani()
+            {
+
+                Console.WriteLine("Chceš hledat podle názvu knihy nebo autora?(k/a)");
+                objekty.rozhodnuti = Char.Parse(Console.ReadLine());
+                switch (objekty.rozhodnuti)
+                {
+                    case 'k':
+                        Console.WriteLine("zadej název knihy, kterou chceš najít");
+                        objekty.hledani = Console.ReadLine();
+                            if(objekty.hledani == objekty.inputJK)
+                            {                   
+                                Console.WriteLine(objekty.inputJK);
+                            }
+                        break;
+                    case 'a':
+                        Console.WriteLine("zadej název autora, podle kterého chceš hledat");
+                        objekty.hledani = Console.ReadLine();
+                            if (objekty.hledani == objekty.inputA)
+                            {
+                                Console.WriteLine(objekty.inputA + objekty.inputJK + objekty.inputR);
+                            }
+                        break;
+                }
+            }
+            public static void Pridat()
+            {
+                Console.WriteLine("Vítam Vás, teď zadejte následující informace o knize");
+                objekty.inputJK = AnsiConsole.Ask<string>("Jméno:");
+                objekty.inputR = AnsiConsole.Ask<int>("Rok:");
+                objekty.inputA = AnsiConsole.Ask<string>("Autor:");
+
+                objekty.Knihy.Add(new kniha(objekty.inputJK, objekty.inputR, objekty.inputA));
+
+                Console.WriteLine("Chceš zobrazit vše,přidávat dále a nebo hledat?(z/p/h)");
+                objekty.input =Char.Parse(Console.ReadLine());
+            }
         }
         public static void Main()
         {
             try
             {
-                while (vice.cyklus = true)
+                metody.Pridat();
+                while (objekty.cyklus = true)
                 {
-                    Console.WriteLine("Vítam Vás, zadejte následující informace o knize");
-                    objekty.inputJ = AnsiConsole.Ask<string>("Jméno:");
-                    //string[] arrayJ = { objekty.inputJ };
-                    objekty.inputR = AnsiConsole.Ask<int>("Rok:");
-                    //int[] arrayR = { objekty.inputR };
-                    objekty.inputA = AnsiConsole.Ask<string>("Autor(zapisuj bez mezer):");
-                    //string[] arrayA = { objekty.inputA };
-                    Console.WriteLine("Chceš zobrazit vše nebo přidávat dále?(z/p)");
-                    objekty.input = Console.ReadLine();
                     switch (objekty.input)
                     {
-                        case "z":
+                        case 'z':
                             Console.Clear();
                             AnsiConsole.MarkupLine("[purple]Vypsané informace jsou:[/]");
-                            /*Console.WriteLine(objekty.inputJ);
-                            Console.WriteLine(objekty.inputR);
-                            Console.WriteLine(objekty.inputA);*/
-                            objekty.Knihy.Add(new kniha { autor = objekty.inputA,rok=objekty.inputR,jmeno=objekty.inputJ});
-                            foreach(var objekty in objekty.Knihy)
+
+                            foreach (var objekty in objekty.Knihy)
                             {
-                                Console.WriteLine(objekty);
+                                Console.WriteLine($"Jméno: {objekty.jmeno}\nRok vydání je: {objekty.rok}\nAutorem je: {objekty.autor}");
+                                Console.WriteLine();
                             }
+
                             Console.ReadKey();
                             Console.Clear();
+                            objekty.cyklus = false;
+                            break;
+                       
+                        case 'p':
+                            Console.Clear();
+                            metody.Pridat();
+                            break;
+
+                        case 'h':
+                            Console.Clear();
+                            metody.Hledani();
                             break;
                     }
-
-                    Console.Clear();
+                    
                 }
             }
             catch (Exception)
@@ -64,28 +113,3 @@ namespace knihovna
         }
     }
 }                     
-/*foreach (string j in arrayJ)
-{
-Console.WriteLine(j);
-}
-
-foreach (int r in arrayR)
-{
-Console.WriteLine(r);
-}
-foreach(string a in arrayA)
-{
-Console.WriteLine(a);
-}*/
-/*for (int i = 0; i < arrayJ.Length; i++)
-{
-    Console.WriteLine(arrayJ[i]);
-}
-for (int i = 0; i < arrayR.Length; i++)
-{
-    Console.WriteLine(arrayR[i]);
-}
-for (int i = 0; i < arrayA.Length; i++)
-{
-    Console.WriteLine(arrayA[i]);
-}*/
