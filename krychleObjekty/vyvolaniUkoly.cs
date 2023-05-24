@@ -1,5 +1,5 @@
 ﻿using Spectre.Console;
-string[] array=new string[] { "krychleObjekty", "metody","koleso","kalkulačka","tryCatch","projektKveten","test","knihovna" };
+string[] array=new string[] { "krychleObjekty", "metody","koleso","kalkulačka","tryCatch","projektKveten","knihovna", "test" };
  var tabulkaSProjekty = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("vyber praci kterou chceš spustit")
