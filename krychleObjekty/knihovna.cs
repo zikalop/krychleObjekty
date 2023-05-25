@@ -41,7 +41,7 @@ namespace knihovna
                     case 'k':
                         Console.WriteLine("zadej název knihy, kterou chceš najít");
                         objekty.hledani = Console.ReadLine();
-                            if(objekty.hledani == objekty.inputJK)
+                        if (objekty.hledani == objekty.inputJK) 
                             {                   
                                 Console.WriteLine(objekty.inputJK);
                             }
