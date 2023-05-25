@@ -36,6 +36,7 @@ namespace knihovna
 
                 Console.WriteLine("Chceš hledat podle názvu knihy nebo autora?(k/a)");
                 objekty.rozhodnuti = Char.Parse(Console.ReadLine());
+                Console.Clear();
                 switch (objekty.rozhodnuti)
                 {
                     case 'k':
@@ -103,6 +104,7 @@ namespace knihovna
                         case 'h':
                             Console.Clear();
                             metody.Hledani();
+                            objekty.cyklus = false;
                             break;
                     }
                     
