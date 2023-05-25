@@ -44,6 +44,7 @@ namespace knihovna
                         if (objekty.hledani == objekty.inputJK) 
                             {                   
                                 Console.WriteLine(objekty.inputJK);
+                                Console.WriteLine("hotovo");
                             }
                         break;
                     case 'a':
@@ -52,6 +53,7 @@ namespace knihovna
                             if (objekty.hledani == objekty.inputA)
                             {
                                 Console.WriteLine(objekty.inputA + objekty.inputJK + objekty.inputR);
+                                Console.WriteLine("hotovo");
                             }
                         break;
                 }
