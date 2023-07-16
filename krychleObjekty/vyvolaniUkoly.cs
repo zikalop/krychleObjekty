@@ -1,5 +1,5 @@
 ﻿using Spectre.Console;
-string[] array=new string[] { "krychleObjekty", "metody","koleso","kalkulačka","tryCatch","projektKveten","knihovna", "test" };
+string[] array=new string[] { "krychleObjekty", "metody","koleso","kalkulačka","tryCatch","projektKveten","knihovna", "test" , "nuda_projekt" };
  var tabulkaSProjekty = AnsiConsole.Prompt(
     new SelectionPrompt<string>()
         .Title("vyber praci kterou chceš spustit")
@@ -32,5 +32,8 @@ switch(tabulkaSProjekty)
         break;
     case "projektKveten":
         projektKveten.all.Inventory.Main();
+        break;
+    case "nuda_projekt":
+        nuda_projekt.all.Main();
         break;
 }
