@@ -37,3 +37,4 @@ switch(tabulkaSProjekty)
         nuda_projekt.all.Main();
         break;
 }
+//novy pc ve skole
