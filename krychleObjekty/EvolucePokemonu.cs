@@ -172,7 +172,7 @@ namespace EvolucePokemonu
                             break;
 
                     }
-                    AnsiConsole.MarkupLine("[grey]Kochej se svým[/]" +vice.pokemonName+ "[grey]času máš dost[/]");
+                    AnsiConsole.MarkupLine("[grey]Kochej se svým pokemonem [/]" + vice.pokemonName+ "[grey] času máš dost[/]");
                     AnsiConsole.MarkupLine("[grey][/]");
                     AnsiConsole.MarkupLine("[grey]Psssst.... klikni pro pokračnování[/]");
                     Console.ReadKey();
