@@ -78,7 +78,8 @@
                     }
                     catch (Exception) 
                     {
-                        Console.WriteLine("Byl zadán špatný input"); break; 
+                        Console.WriteLine("Byl zadán špatný input"); 
+                        break; 
                     }
                 }
             }
