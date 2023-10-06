@@ -23,7 +23,9 @@ namespace EvolucePokemonu
                         .PageSize(10)
                         .MoreChoicesText("")
                         .AddChoices("[blue]Voda[/]", "[red]Oheň[/]", "[green]Země[/]", "[yellow]Elektřina[/]"));
+                    
                     switch (pokemoni)
+
                     {
                         case "[blue]Voda[/]":
                             vice.pokemonName = "Squirtle";
@@ -175,6 +177,7 @@ namespace EvolucePokemonu
 
 
                     }
+                   
                     switch (vice.pokemonName)
                     {
                         case "Squirtle":
@@ -190,10 +193,12 @@ namespace EvolucePokemonu
                             AnsiConsole.Markup($"[yellow]Kochej se svým pokemonem {vice.pokemonName} času máš dost[/]");
                             break;
                     }
+                    
                     Console.WriteLine();
                     AnsiConsole.MarkupLine("[grey]Psssst.... klikni pro pokračnování[/]");
                     Console.ReadKey();
                     Console.Clear();
+                    
                     var x = AnsiConsole.Prompt(
                         new SelectionPrompt<string>()
                             .Title("Chceš pokračovat?")
@@ -210,16 +215,15 @@ namespace EvolucePokemonu
                             cycle = true;
                             break;
                         case "[red]Ne[/]":
-                            Console.WriteLine("kód končí");
+                            AnsiConsole.MarkupLine("[yellow]Kód[/] [white]končí[/><]");
                             cycle = false;
                             break;
                     }
                 }
             }
-            catch (Exception chybaa)
+            catch (Exception)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(chybaa);
+                AnsiConsole.WriteLine("[red]Špatnej input[/]");
             }
         }
     }
