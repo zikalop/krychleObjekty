@@ -1,4 +1,5 @@
 ﻿using Spectre.Console;
+
 namespace EvolucePokemonu
 {
     public class all
@@ -15,6 +16,7 @@ namespace EvolucePokemonu
                 bool cycle = true;
                 while (cycle)
                 {
+                    Console.Clear();
                     var pokemoni = AnsiConsole.Prompt(
                         new SelectionPrompt<string>()
                         .Title("Vyber si element pokemona")
@@ -24,7 +26,7 @@ namespace EvolucePokemonu
                     switch (pokemoni)
                     {
                         case "[blue]Voda[/]":
-                            vice.pokemonName = "squirtle";
+                            vice.pokemonName = "Squirtle";
                             Console.WriteLine(@"
                 ,-'            ""`-.
               ,'                   `-.
@@ -60,9 +62,9 @@ namespace EvolucePokemonu
                                       `---.__,--.'");
                             break;
                         case "[red]Oheň[/]":
-                            vice.pokemonName = "charmander";
+                            vice.pokemonName = "Charmander";
                             Console.WriteLine(@"
-                                    _.--""""`-..
+                 _.--""""`-..
                 ,'          `.
               ,'          __  `.
              /|          "" __   \
@@ -98,7 +100,7 @@ namespace EvolucePokemonu
                                 `"" "" -' ");
                             break;
                         case "[green]Země[/]":
-                            vice.pokemonName = "bulbasaur";
+                            vice.pokemonName = "Bulbasaur";
                             Console.WriteLine(@"/
                             _,.------....___,.' ',.-.
                          ,-'          _,.--""        |
@@ -129,7 +131,7 @@ namespace EvolucePokemonu
      `""^--'..'   '-`-^-'""--    `-^-'`.''""""""""""`.,^.`.--'");
                             break;
                         case "[yellow]Elektřina[/]":
-                            vice.pokemonName = "pikachu";
+                            vice.pokemonName = "Pikachu";
                             Console.WriteLine(@"quu..__
      $$$b  `---.__
       ""$$b        `--.                          ___.---uuudP
@@ -171,37 +173,53 @@ namespace EvolucePokemonu
                                        `:.:'");
                             break;
 
+
                     }
-                    AnsiConsole.MarkupLine("[grey]Kochej se svým pokemonem [/]" + vice.pokemonName+ "[grey] času máš dost[/]");
-                    AnsiConsole.MarkupLine("[grey][/]");
+                    switch (vice.pokemonName)
+                    {
+                        case "Squirtle":
+                            AnsiConsole.Markup($"[blue]Kochej se svým pokemonem {vice.pokemonName} času máš dost[/]"); 
+                            break;
+                        case "Charmander":
+                            AnsiConsole.Markup($"[red]Kochej se svým pokemonem {vice.pokemonName} času máš dost[/]");
+                            break;
+                        case "Bulbasaur":
+                            AnsiConsole.Markup($"[green]Kochej se svým pokemonem {vice.pokemonName} času máš dost[/]");
+                            break;
+                        case "Pikachu":
+                            AnsiConsole.Markup($"[yellow]Kochej se svým pokemonem {vice.pokemonName} času máš dost[/]");
+                            break;
+                    }
+                    Console.WriteLine();
                     AnsiConsole.MarkupLine("[grey]Psssst.... klikni pro pokračnování[/]");
                     Console.ReadKey();
                     Console.Clear();
                     var x = AnsiConsole.Prompt(
                         new SelectionPrompt<string>()
-                            .Title("Chceš pokračovat nebo chceš kód ukončit?")
+                            .Title("Chceš pokračovat?")
                             .PageSize(10)
                             .MoreChoicesText("")
-                            .AddChoices("[green]Ano[/]","[red]Ne[/]"));
+                            .AddChoices("[green]Ano[/]", "[red]Ne[/]"));
 
                     switch (x)
                     {
-                        case "ano":
-                            Console.WriteLine("Klikni pro pokračovaní kódu");
-                            Console.ReadKey();
+                        case "[green]Ano[/]":
+                            /*Console.WriteLine("Klikni pro pokračovaní kódu");
+                            Console.ReadKey();*/
                             Console.Clear();
+                            cycle = true;
                             break;
-                        case "ne":
+                        case "[red]Ne[/]":
                             Console.WriteLine("kód končí");
                             cycle = false;
                             break;
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception chybaa)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Špatný intput");
+                Console.WriteLine(chybaa);
             }
         }
     }
