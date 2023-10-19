@@ -1,5 +1,4 @@
 ﻿using Spectre.Console;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace RandomCountry
 {
