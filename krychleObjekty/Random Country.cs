@@ -1,4 +1,5 @@
 ﻿using Spectre.Console;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RandomCountry
 {
@@ -9,6 +10,8 @@ namespace RandomCountry
         {
             public static string obsah_textaku = File.ReadAllText("text.txt");
             public static string volba;
+            public static string volbaz;
+            public static string letterR;
             public static int volba1=0;
             public static int volba2=0;
 
@@ -45,12 +48,11 @@ namespace RandomCountry
 
             foreach (string jednaZeme in seznam_zemi)
             {
-                //jednaZeme.TrimEnd();
                 Console.WriteLine($"--- ZEMĚ ---");
                 Console.WriteLine(jednaZeme);
             }
 
-            Console.WriteLine("chcete vygenerovat náhodnou zemi y/n");
+            /*Console.WriteLine("chcete vygenerovat náhodnou zemi y/n");
             objekty.volba = Console.ReadLine();
             if (objekty.volba == "y")
             {
@@ -64,8 +66,24 @@ namespace RandomCountry
             }
             else if (objekty.volba == "n")
             {
-                Console.WriteLine("kk končim");
+                Console.WriteLine("kk jdem na další krok");
+            }*/
+
+            Console.ForegroundColor= ConsoleColor.White;
+            string file = @"C:\Users\vojtech.zika\Documents\GitHub\krychleObjekty\krychleObjekty\text.txt";
+            string[] radky = File.ReadAllLines(file);
+            Console.WriteLine("Zadej zemi kterou chceš najít(napiš 1. písmeno)");
+            string HPismeno = Console.ReadLine();
+            foreach(string pZeme in radky)
+            {
+                if(pZeme.StartsWith(HPismeno.ToString(), StringComparison.OrdinalIgnoreCase))
+                {
+                    AnsiConsole.WriteLine("[red]---------[/][green]------------[/][blue]---------[/]");
+                    AnsiConsole.MarkupLine($"[red]pZeme[/]");
+                    AnsiConsole.MarkupLine("[red]---------[/][green]------------[/][blue]---------[/]");
+                }
             }
+            
         }
 
         public static void Green()
@@ -76,7 +94,6 @@ namespace RandomCountry
 
             foreach (string jednaZeme in seznam_zemi)
             {
-                //jednaZeme.TrimEnd();
                 Console.WriteLine($"--- ZEMĚ ---");
                 Console.WriteLine(jednaZeme);
             }
@@ -131,3 +148,12 @@ namespace RandomCountry
         }
     }
 }
+            /*Console.WriteLine("chcete vygenerovat zemi přesně podle 1. písmena? (y/n)");
+            objekty.volbaz = Console.ReadLine();
+            
+            if(objekty.volbaz == "y")
+            {
+                Console.WriteLine("Zadej písmeno země:\n");
+                objekty.letterR = Console.ReadLine();
+                File.ReadLines(objekty.letterR);
+            }*/
