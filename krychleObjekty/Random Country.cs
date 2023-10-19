@@ -69,16 +69,16 @@ namespace RandomCountry
                 Console.WriteLine("kk jdem na další krok");
             }*/
 
-            Console.ForegroundColor= ConsoleColor.White;
             string file = @"C:\Users\vojtech.zika\Documents\GitHub\krychleObjekty\krychleObjekty\text.txt";
             string[] radky = File.ReadAllLines(file);
             Console.WriteLine("Zadej zemi kterou chceš najít(napiš 1. písmeno)");
+            Console.ForegroundColor= ConsoleColor.White;
             string HPismeno = Console.ReadLine();
             foreach(string pZeme in radky)
             {
                 if(pZeme.StartsWith(HPismeno.ToString(), StringComparison.OrdinalIgnoreCase))
                 {
-                    AnsiConsole.WriteLine("[red]---------[/][green]------------[/][blue]---------[/]");
+                    AnsiConsole.MarkupLine("[red]---------[/][green]------------[/][blue]---------[/]");
                     AnsiConsole.MarkupLine($"[red]pZeme[/]");
                     AnsiConsole.MarkupLine("[red]---------[/][green]------------[/][blue]---------[/]");
                 }
