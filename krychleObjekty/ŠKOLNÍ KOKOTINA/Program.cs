@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Animal;
 
-namespace krychleObjekty.ANIMALS
+bool programIsRunning = true;
+ServiceAnimal serviceAnimal = new ServiceAnimal();
+while (programIsRunning)
 {
-    internal class Program
-    {
-    }
+    Console.WriteLine("1. Přidat zvíře");
+    Console.WriteLine("2. Odebrat zvíře");
+    Console.WriteLine("3. Upravit zvíře");
+    Console.WriteLine("4. Vypsat zvířata");
+    Console.WriteLine("5. Ukončit program");
+
+    Console.WriteLine("Co si přeješ vykonat?");
+    Console.ReadLine();
 }
