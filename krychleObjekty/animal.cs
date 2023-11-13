@@ -54,6 +54,7 @@ namespace animal
         public static void odebrani()
         {
             List<string> values = new();
+            List<int> values2 = new();
             foreach (KeyValuePair<string, string> s in objekty.atributyZ)
             {
                 values.Add($"{s.Key} {s.Value}");//pridá "s" do listu "values"
@@ -64,7 +65,7 @@ namespace animal
                      .PageSize(10)
                      .MoreChoicesText("")
                      .AddChoices(values));
-            objekty.atributyZ.Remove(tabule);
+            //objekty.atributyZ.Remove("dsfa");
             Console.Clear();
         }
     }
