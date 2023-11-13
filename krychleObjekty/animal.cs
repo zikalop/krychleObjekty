@@ -21,7 +21,7 @@ namespace animal
                      .Title("Co chceš dělat?")
                      .PageSize(10)
                      .MoreChoicesText("")
-                     .AddChoices("1. Přidat zvíře", "2. Odebrat zvíře zvíře", "3. Upravit zvíře", "4. Vypsat zvířata", "0. Ukončit program"));
+                     .AddChoices("1. Přidat zvíře", "2. Odebrat zvíře", "3. Upravit zvíře", "4. Vypsat zvířata", "0. Ukončit program"));
                 
 
                 switch (tabule)
@@ -32,12 +32,19 @@ namespace animal
                         objekty.atributyZ.Add(input1, input2);
                         Console.Clear();
                         break;
-                    case "2. Odebrat zvíře zvíře":
+                    case "2. Odebrat zvíře":
                         odebrani();
                         break;
                     case "3. Upravit zvíře":
                         break;
                     case "4. Vypsat zvířata":
+                        Console.WriteLine("Zvířata:");
+                        foreach (KeyValuePair<string, string> s in objekty.atributyZ)
+                        {
+                            Console.WriteLine(s);
+                        }
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case "0. Ukončit program":
                         break;
@@ -57,6 +64,7 @@ namespace animal
                      .PageSize(10)
                      .MoreChoicesText("")
                      .AddChoices(values));
+            objekty.atributyZ.Remove(tabule);
             Console.Clear();
         }
     }
