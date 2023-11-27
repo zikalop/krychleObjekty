@@ -53,7 +53,7 @@ namespace PaOr
 
             var tabule = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                    .Title("Vyber akci")
+                    .Title("[purple]Vyber akci[/]")
                     .PageSize(10)
                     .MoreChoicesText("")
                     .AddChoices("Výsledná tabule","KONEC"));
